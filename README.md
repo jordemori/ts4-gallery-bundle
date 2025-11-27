@@ -1,7 +1,7 @@
-📁 TS4 Gallery Protobuf Bundle (Recovered)
+# 📁 TS4 Gallery Protobuf Bundle (Recovered)
 
   ⚠️ All schema definitions contained in this file were originally
-  authored by anadius.
+  authored by **anadius**.
   This repository exists solely to preserve the protobuf bundle required
   by tools and userscripts that depend on it—in my case, to keep a
   gallery downloader script functional after the original source was
@@ -9,7 +9,7 @@
 
 ------------------------------------------------------------------------
 
-📌 About This Repository
+## 📌 About This Repository
 
 This repository hosts a recovered copy of bundle.json / bundle.min.json,
 the Protobuf schema used internally by The Sims 4 Gallery / Exchange.
@@ -28,50 +28,7 @@ This repository provides only the schema file.
 
 ------------------------------------------------------------------------
 
-📦 What This File Contains
-
-The Protobuf schema includes definitions for messages such as:
-
--   EA.Sims4.Network.TrayMetadata
--   TrayBlueprintMetadata
--   TrayHouseholdMetadata
--   TrayRoomBlueprintMetadata
--   FamilyData
--   ExchangeEnvelope
--   ExchangeSearchResults
--   A variety of enums and nested message structures used by the Gallery
-    backend
-
-These definitions are required by tools that use protobuf.js to produce
-fully compatible .trayitem and .dat files.
-
-------------------------------------------------------------------------
-
-🧩 How to Use This File
-
-If your tool or userscript expects a resource named bundle.json, you can
-load this file like so:
-
-    import protobuf from "protobufjs";
-
-    const schema = await fetch("bundle.min.json").then(r => r.json());
-    const root = protobuf.Root.fromJSON(schema);
-
-Example:
-
-    const TrayMetadata = root.lookupType("EA.Sims4.Network.TrayMetadata");
-    const FamilyData  = root.lookupType("EA.Sims4.Network.FamilyData");
-
-This provides the necessary encoders/decoders for:
-
--   tray metadata
--   household data
--   gallery thumbnails
--   exchange payloads
-
-------------------------------------------------------------------------
-
-🛠 Why This Repository Exists
+## 🛠 Why This Repository Exists
 
 The original hosting location for this schema—maintained by anadius—was
 removed.
@@ -97,7 +54,26 @@ operate.
 
 ------------------------------------------------------------------------
 
-⚠️ Disclaimer
+## 📦 What This File Contains
+
+The Protobuf schema includes definitions for messages such as:
+
+-   EA.Sims4.Network.TrayMetadata
+-   TrayBlueprintMetadata
+-   TrayHouseholdMetadata
+-   TrayRoomBlueprintMetadata
+-   FamilyData
+-   ExchangeEnvelope
+-   ExchangeSearchResults
+-   A variety of enums and nested message structures used by the Gallery
+    backend
+
+These definitions are required by tools that use protobuf.js to produce
+fully compatible .trayitem and .dat files.
+
+------------------------------------------------------------------------
+
+## ⚠️ Disclaimer
 
 -   This repository does not contain any game assets or copyrighted
     content.
